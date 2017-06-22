@@ -1,3 +1,7 @@
+html {
+    height:100%;
+}
+
 .letterBox{
     width: 50px;
     height: 50px;
@@ -5,10 +9,11 @@
     opacity: 0.8;
     margin: 5px;
     border: 2px solid black;
+    display: flex !important;
 }
 
 #letterHolder{
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     max-width: 50vw;
     margin: auto;
@@ -23,7 +28,7 @@
 }
 
 .display-4{
-    text-align:center;
+    font-weight: bolder;
 }
 
 canvas {
@@ -36,9 +41,17 @@ canvas {
     opacity: 0.5;
 }
 
-.container {
-    width: 100vw;
+main.container {
+    width: 100%;
     height: 100vh;
+}
+
+.gameText{
+    text-align: center;
+}
+
+.gameTextHolder {
+    margin-bottom: 10%;
 }
 
 .loader {
@@ -49,8 +62,12 @@ canvas {
     width: 1em;
     height: 1em;
     border-radius: 50%;
-    margin: 72px auto;
-    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left:0;
+    right:0;
+    top: 50vh;
+    position: absolute;
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);

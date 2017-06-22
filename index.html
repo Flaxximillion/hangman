@@ -10,39 +10,44 @@
 </head>
 <body>
 
-<main class="container">
-    <div class="display-4">
+<main class="container d-flex flex-column flex-wrap my-auto align-items-center justify-content-around">
+    <div class="display-4 p-3">
         HANGMAN: CAT EDITION
     </div>
-
-    <button type="button" class="btn btn-primary btn-lg m-3" id="startPlay">Start Game!</button>
+    <div>Play hangman with cute cat pictures instead of facing the morbid realities of death at the hands of an
+        executioner!
+    </div>
+    <button type="button" class="btn btn-primary btn-lg m-3 invisible" id="startPlay">Start Game!</button>
 
     <div id="letterHolder" class="justify-content-around">
 
     </div>
 
-    <div class = "loader invisible" id="loader">
+    <div class="gameTextHolder container">
+        <div class="gameText">Guesses:
+            <span id="guesses">6</span>
+        </div>
+
+        <div class="gameText">
+            You've Guessed:
+            <span id="youveGuessed"> </span>
+        </div>
+
+
+        <div class="gameText">
+            <span id="gameStatus"></span>
+        </div>
+    </div>
+
+
+    <div class="loader" id="loader">
         <span>Loading...</span>
-    </div>
-
-    <div>Guesses:
-        <span id="guesses">6</span>
-    </div>
-
-    <div>
-        You've Guessed:
-        <span id="youveGuessed"> </span>
-    </div>
-
-
-    <div>
-        <span id="gameStatus"></span>
     </div>
 
 
     <div>
         <canvas id="canvas">get a browser that supports canvas you pleb</canvas>
-        <div id = "catPicture" style="display:none">
+        <div id="catPicture" style="display:none">
 
         </div>
 
