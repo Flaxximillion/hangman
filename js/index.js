@@ -9,11 +9,20 @@ let charCounter = 0;
 let buttonStart = document.getElementById("startPlay");
 let guessSpan = document.getElementById("youveGuessed");
 
+let imagePieces = {
+    5: [0, 0],
+    4: [1, 0],
+    3: [2, 0],
+    2: [0, 1],
+    1: [1, 1],
+    0: [2, 1]
+};
+
 buttonStart.onclick=function(){
     buttonStart.classList.add("invisible");
     buttonStart.id = "restartPlay";
-    gameInit();
     genWordDiv();
+    genCatPic();
 };
 
 function genWord() {
@@ -84,11 +93,14 @@ function setGameStatus(set){
     gameGuesses.textContent = guessesRemaining;
     if(guessesRemaining === 0){
         setDiv.textContent="You lost!";
+        setGameImage();
         gameEnd();
     } else if(set === 1){
         setDiv.textContent= "You've already guessed that!";
+        setGameImage();
     } else if (set === 2){
         setDiv.textContent= "Nope.jpg";
+        setGameImage();
     } else if (set === 3){
         setDiv.textContent= "yay";
     } else if (set === 4){
@@ -99,7 +111,11 @@ function setGameStatus(set){
     }
 }
 
-
+function setGameImage(){
+    let imageX = imagePieces[guessesRemaining][0];
+    let imageY = imagePieces[guessesRemaining][1];
+    drawImage(imageX, imageY);
+}
 
 function gameEnd(){
     for(i = 0; i < charArray.length; i++){
@@ -120,6 +136,7 @@ function gameEnd(){
 function restart(){
     let restartButton = document.getElementById("restartPlay");
     restartButton.classList.add("invisible");
+    ctx.clearRect(0,0,canvas.width,canvas.height);
 
     guessesRemaining = 6;
 
@@ -132,10 +149,53 @@ function restart(){
     userGuesses=[];
     charCounter=0;
 
+    image = new Image();
+
+
+    image.onload = function(){
+        setCanvas();
+        gameInit();
+    };
+
+    image.src = "http://thecatapi.com/api/images/get?api_key[MTk2NzI0]";
+
     setGameStatus(4);
-    gameInit();
     genWordDiv();
 }
+
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext('2d');
+let image;
+let image2 = new Image();
+
+function drawImage(x, y) {
+    let pieceHeight = Math.round(canvas.height / 2);
+    let pieceWidth = Math.round(canvas.width / 3);
+
+    console.log(pieceWidth, pieceHeight, x*pieceWidth, y*pieceHeight);
+
+    ctx.drawImage(image, (x*pieceWidth), (y*pieceHeight), pieceWidth, pieceHeight, (x*pieceWidth), (y*pieceHeight), pieceWidth, pieceHeight);
+}
+
+function setCanvas(){
+    console.log(this.naturalHeight, this.naturalWidth);
+    image2.src=image.src;
+    canvas.width = image2.width;
+    canvas.height = image2.height;
+}
+
+function genCatPic(){
+    image = new Image();
+
+
+    image.onload = function(){
+        setCanvas();
+        gameInit();
+    };
+
+    image.src = "http://thecatapi.com/api/images/get?api_key[MTk2NzI0]";
+}
+
 
 function keyFunctions(){
     setGameStatus(4);
