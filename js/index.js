@@ -412,7 +412,7 @@ function getImage(){
         mode: 'cors'
     };
 
-    fetch("http://thecatapi.com/api/images/get?api_key[MTk2NzI0]&type=jpg", init)
+    fetch("https://thecatapi.com/api/images/get?api_key[MTk2NzI0]&type=jpg", init)
         .then(handleErrors)
         .then(function(response){
             return response.blob();
