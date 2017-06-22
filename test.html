@@ -3,33 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<canvas id="canvas"></canvas>
+
+<img onerror = getImage(1); onload=sayHello()>
 
 <script>
-    var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
+    let myImage = document.querySelector('img');
+    let init = {
+        method: 'GET',
+        cache: 'no-cache',
+        mode: 'cors'
+    };
 
-    var image = new Image(60, 45);   // using optional size for image
-    image.onload = drawImageActualSize; // draw when image has loaded
+    function sayHello(){
+        console.log("hello");
+    }
 
-    // load an image of intrinsic size 300x227 in CSS pixels
-    image.src = 'https://mdn.mozillademos.org/files/5397/rhino.jpg';
+    function getImage(val){
+        fetch("http://thecatapi.com/api/images/get?api_key[MTk2NzI0]&type=jpg", init)
+            .then(handleErrors)
+            .then(function(response){
+                return response.blob();
+            }).then(function(myBlob){
+            let objectURL = URL.createObjectURL(myBlob);
+            myImage.src = objectURL;
+        }).catch(function(error){
+            console.log(error);
+            getImage(0);
+        });
+    }
 
-    function drawImageActualSize() {
-        // use the intrinsic size of image in CSS pixels for the canvas element
-        canvas.width = this.naturalWidth;
-        canvas.height = this.naturalHeight;
 
-        // will draw the image as 300x227 ignoring the custom size of 60x45
-        // given in the constructor
-        ctx.drawImage(this, 0, 0);
 
-        // To use the custom size we'll have to specify the scale parameters
-        // using the element's width and height properties - lets draw one
-        // on top in the corner:
-        ctx.drawImage(this, 0, 0, this.width, this.height);}
+    function handleErrors(response){
+        if(!response.ok){
+            throw Error(response.statusText);
+        }
+        return response;
+    }
+
+getImage();
 </script>
 </body>
 </html>

@@ -11,8 +11,18 @@
 <body>
 
 <main class="container">
-    <div id="letterHolder">
+    <div class="display-4">
+        HANGMAN: CAT EDITION
+    </div>
 
+    <button type="button" class="btn btn-primary btn-lg m-3" id="startPlay">Start Game!</button>
+
+    <div id="letterHolder" class="justify-content-around">
+
+    </div>
+
+    <div class = "loader invisible" id="loader">
+        <span>Loading...</span>
     </div>
 
     <div>Guesses:
@@ -29,8 +39,6 @@
         <span id="gameStatus"></span>
     </div>
 
-
-    <button type="button" class="btn btn-primary btn-lg m-3" id="startPlay">Start Game!</button>
 
     <div>
         <canvas id="canvas">get a browser that supports canvas you pleb</canvas>
