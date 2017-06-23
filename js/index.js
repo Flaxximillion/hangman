@@ -49,6 +49,10 @@ let buttonStart = document.getElementById("startPlay");
 
 let guessSpan = document.getElementById("youveGuessed");
 
+let displayDiv = document.getElementById("gameTextHolder");
+
+let descriptorText = document.getElementById("descriptorText");
+
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 
 
@@ -70,7 +74,7 @@ window.onload = function(){
     window.setTimeout(function(){
         buttonStart.classList.remove("invisible");
         loadingDiv.classList.add("invisible");
-    },3000);
+    },1000);
 };
 
 //Set the position for each piece of the canvas.
@@ -168,6 +172,9 @@ function genWord() {
 
 
 function gameInit() {
+
+    descriptorText.className = "invisible";
+    displayDiv.classList.remove("invisible");
     window.addEventListener("keypress", keyFunctions);
 }
 
@@ -349,6 +356,7 @@ function gameEnd() {
     restartButton.textContent = "New Game?";
 
     restartButton.classList.remove("invisible");
+    displayDiv.classList.add("invisible");
 
     //When the button is clicked, run the "restart" function. Also
     //give the restart function the restart button because I'm too lazy to
@@ -383,7 +391,7 @@ function restart(button) {
 
     //Reset the content of the appropriate variables.
 
-    guessSpan.textContent = "";
+    setGameStatus(4);
     charArray = [];
     userGuesses = [];
     charCounter = 0;
@@ -412,22 +420,19 @@ function getImage(){
         mode: 'cors'
     };
 
-    fetch("https://thecatapi.com/api/images/get?api_key[MTk2NzI0]&type=jpg", init)
+    fetch("https://random.cat/meow", init)
         .then(handleErrors)
         .then(function(response){
-            return response.blob();
-        }).then(function(myBlob){
-        let objectURL = URL.createObjectURL(myBlob);
-        image.src = objectURL;
-    }).catch(function(error){
-        console.log(error);
-        getImage();
-    });
+            return response.json();
+        }).then(function(j){
+            image.src = j.file;
+    })
 }
 //Logs the error message if the fetch request returns an error.
 
 function handleErrors(response) {
     if (!response.ok) {
+        console.log(response);
         throw Error(response.statusText);
     }
     return response;

@@ -10,20 +10,26 @@
 </head>
 <body>
 
-<main class="container d-flex flex-column flex-wrap my-auto align-items-center justify-content-around">
-    <div class="display-4 p-3">
+<main class="container shadow-depth-2 d-flex flex-column flex-wrap my-auto align-items-center justify-content-around">
+    <div class="display-4 p-3 m-3">
         HANGMAN: CAT EDITION
     </div>
-    <div>Play hangman with cute cat pictures instead of facing the morbid realities of death at the hands of an
-        executioner!
+    <div id="descriptorText">
+        <p>Play hangman with cute cat pictures instead of facing the morbid realities of death at the hands of an
+        executioner!</p>
+
+        <p>Instead of adding another slab of meat to hang, guessing wrong reveals part of a cute cat picture! It's a win/win situation!</p>
     </div>
-    <button type="button" class="btn btn-primary btn-lg m-3 invisible" id="startPlay">Start Game!</button>
+    <button type="button" class="btn btn-warning btn-lg m-3 invisible" id="startPlay">Start Game!</button>
 
     <div id="letterHolder" class="justify-content-around">
 
     </div>
 
-    <div class="gameTextHolder container">
+    <div class="container invisible d-flex flex-column justify-content-center" id="gameTextHolder">
+        <div class="gameText">
+            <span id="gameStatus"></span>
+        </div>
         <div class="gameText">Guesses:
             <span id="guesses">6</span>
         </div>
@@ -34,9 +40,7 @@
         </div>
 
 
-        <div class="gameText">
-            <span id="gameStatus"></span>
-        </div>
+
     </div>
 
 
