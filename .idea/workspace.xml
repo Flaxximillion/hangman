@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7e66718-45af-4152-852e-50b3302f71bb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WordList-JS" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,10 +20,32 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="73" column="24" lean-forward="true" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+            <state relative-caret-position="210">
+              <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
               <folding>
-                <marker date="1498227107566" expanded="true" signature="1813:1874" ph="..." />
+                <marker date="1498227219513" expanded="true" signature="1800:1861" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wordBank.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/wordBank.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wordList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/wordList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -332,12 +352,12 @@
       <workItem from="1498089137913" duration="15130000" />
       <workItem from="1498140257890" duration="19863000" />
       <workItem from="1498226750804" duration="153000" />
-      <workItem from="1498227060356" duration="51000" />
+      <workItem from="1498227060356" duration="159000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65234000" />
+    <option name="totallyTimeSpent" value="65342000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="952" y="0" width="976" height="1038" extended-state="0" />
@@ -378,8 +398,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WordList-JS/src/wordList.min.js" />
-    <entry file="file://$PROJECT_DIR$/WordList-JS/.gitignore" />
     <entry file="file://$PROJECT_DIR$/WordList-JS/src/wordList.js" />
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -407,7 +425,7 @@
         <state relative-caret-position="255">
           <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
           <folding>
-            <marker date="1498227107566" expanded="true" signature="1813:1874" ph="..." />
+            <marker date="1498227219513" expanded="true" signature="1800:1861" ph="..." />
           </folding>
         </state>
       </provider>
@@ -417,7 +435,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1498227107566" expanded="true" signature="1813:1874" ph="..." />
+            <marker date="1498227219513" expanded="true" signature="1800:1861" ph="..." />
           </folding>
         </state>
       </provider>
@@ -480,7 +498,7 @@
         <state relative-caret-position="525">
           <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
           <folding>
-            <marker date="1498227107566" expanded="true" signature="1813:1874" ph="..." />
+            <marker date="1498227219513" expanded="true" signature="1800:1861" ph="..." />
           </folding>
         </state>
       </provider>
@@ -490,7 +508,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1498227107566" expanded="true" signature="1813:1874" ph="..." />
+            <marker date="1498227219513" expanded="true" signature="1800:1861" ph="..." />
           </folding>
         </state>
       </provider>
@@ -523,7 +541,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1498227107566" expanded="true" signature="1813:1874" ph="..." />
+            <marker date="1498227219513" expanded="true" signature="1800:1861" ph="..." />
           </folding>
         </state>
       </provider>
@@ -595,12 +613,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/wordBank.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/wordList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="73" column="24" lean-forward="true" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+        <state relative-caret-position="210">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
           <folding>
-            <marker date="1498227107566" expanded="true" signature="1813:1874" ph="..." />
+            <marker date="1498227219513" expanded="true" signature="1800:1861" ph="..." />
           </folding>
         </state>
       </provider>
