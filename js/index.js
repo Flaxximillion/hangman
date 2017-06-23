@@ -47,6 +47,9 @@ let buttonStart = document.getElementById("startPlay");
 
 //Get the span that displays what you've guessed.
 
+let winSpan = document.getElementById("wins");
+let wins = 0;
+
 let guessSpan = document.getElementById("youveGuessed");
 
 let displayDiv = document.getElementById("gameTextHolder");
@@ -254,7 +257,7 @@ function checkKey(key) {
 
     if (userGuessIndex === -1) {
         userGuesses.push(key);
-        guessSpan.textContent = guessSpan.textContent + " " + key.toUpperCase();
+        guessSpan.innerHTML = guessSpan.innerHTML + " " + key.toUpperCase();
     } else if (userGuessIndex !== -1) {
         guessesRemaining--;
         setGameStatus(1);
@@ -270,6 +273,7 @@ function checkKey(key) {
         for (i = 0; i < charArray.length; i++) {
             if (charArray[i] === key) {
                 index.push(i);
+                setGameStatus(3);
             }
         }
 
@@ -318,6 +322,7 @@ function setGameStatus(set) {
     if (guessesRemaining === 0) {
         setDiv.textContent = "You lost!";
         setGameImage();
+        winSpan.textContent = "Aw man! At least that's a cute cat! You've got " +wins+ " wins!";
         gameEnd();
     } else if (set === 1) {
         setDiv.textContent = "You've already guessed that!";
@@ -326,11 +331,13 @@ function setGameStatus(set) {
         setDiv.textContent = "Nope.jpg";
         setGameImage();
     } else if (set === 3) {
-        setDiv.textContent = "yay";
+        setDiv.textContent = "Yay!";
     } else if (set === 4) {
         setDiv.textContent = "";
     } else if (set === 5) {
         setDiv.textContent = "Win!";
+        wins++;
+        winSpan.textContent = "Nice! You've won " +wins+ " game(s)!";
         gameEnd();
     }
 }
@@ -338,7 +345,6 @@ function setGameStatus(set) {
 //Function that executes when the game ends.
 
 function gameEnd() {
-
     //Show the user the full word.
 
     for (i = 0; i < charArray.length; i++) {
@@ -391,10 +397,13 @@ function restart(button) {
 
     //Reset the content of the appropriate variables.
 
+    winSpan.textContent = "";
     setGameStatus(4);
     charArray = [];
     userGuesses = [];
     charCounter = 0;
+    guessSpan.textContent = '';
+    console.log("a");
 
     //Call the first function necessary to start the game again.
 

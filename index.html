@@ -5,42 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="js/wordList.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+    <script src="js/wordList.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <main class="container shadow-depth-2 d-flex flex-column flex-wrap my-auto align-items-center justify-content-around">
     <div class="display-4 p-3 m-3">
-        HANGMAN: CAT EDITION
+        HANGMAN: CAT かっと EDITION
     </div>
-    <div id="descriptorText">
+    <div id="descriptorText" class="p-1 shadow-depth-2">
         <p>Play hangman with cute cat pictures instead of facing the morbid realities of death at the hands of an
         executioner!</p>
 
-        <p>Instead of adding another slab of meat to hang, guessing wrong reveals part of a cute cat picture! It's a win/win situation!</p>
+        <p>Guessing a wrong letter reveals part of a cute cat picture random stolen from the internet! It's a win/win situation!</p>
     </div>
-    <button type="button" class="btn btn-warning btn-lg m-3 invisible" id="startPlay">Start Game!</button>
+    <div class="gameTextHolder">
+        <span id="wins"></span>
+    </div>
+    <button type="button" class="btn btn-warning btn-lg shadow-depth-2 m-3 invisible" id="startPlay">Start Game!</button>
 
     <div id="letterHolder" class="justify-content-around">
 
     </div>
 
-    <div class="container invisible d-flex flex-column justify-content-center" id="gameTextHolder">
-        <div class="gameText">
-            <span id="gameStatus"></span>
-        </div>
+
+    <div class="container invisible d-flex flex-column justify-content-center gameTextHolder" id="gameTextHolder">
+
         <div class="gameText">Guesses:
             <span id="guesses">6</span>
         </div>
-
+        <div class="gameText">
+            <span id="gameStatus"></span>
+        </div>
         <div class="gameText">
             You've Guessed:
             <span id="youveGuessed"> </span>
         </div>
-
-
-
     </div>
 
 
@@ -70,6 +72,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
         integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
         crossorigin="anonymous"></script>
-<script src="js/wordBank.js"></script>
-<script src="js/index.js"></script>
+<script src="js/index.js" type="text/javascript"></script>
+<script src="js/wordBank.js" type="text/javascript"></script>
+
 </body>

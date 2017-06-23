@@ -3,20 +3,39 @@ html {
     background-image: url(../assets/pusheen.png);
 }
 
+@font-face {
+    font-family: "cat";
+    src: url(../assets/CatCafe.ttf) format('truetype');
+}
+
 body{
     background-color: transparent;
 }
 
+p{
+    margin-bottom: 5px;
+}
 
-#gameTextHolder, #gameTextHolder>span{
-    font-size: 2em;
-    color: #FAB8BE;
+#descriptorText{
+    text-align: center;
+    background-color: rgba(246, 215, 191, 1);
+    font-family: 'Pangolin', cursive;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+.gameTextHolder, .gameTextHolder>span{
+    font-size: 50px;
+    height: 5em;
+    color: #ffc300;
     display: inline-block;
     text-shadow:
-            -1px -1px 0 #000,
-            1px -1px 0 #000,
-            -1px 1px 0 #000,
-            1px 1px 0 #000;
+            -2px -2px 0 #000,
+            2px -2px 0 #000,
+            -2px 2px 0 #000,
+            2px 2px 0 #000;
+    font-family: 'Pangolin', cursive;
 }
 
 .letterBox{
@@ -41,6 +60,9 @@ body{
     margin: auto;
     align-self: center;
     text-align: center;
+    font-family: 'Pangolin', cursive;
+    color: #e7a61a;
+    font-size: 2em;
 }
 
 .display-4{
@@ -49,6 +71,7 @@ body{
     background-color: #e7a61a;
     box-shadow: 0px 0px 60px 10px rgba(191,100,21,1), inset 0px 0px 60px 10px rgba(191,100,21,0.73);
     border-radius: 5px;
+    font-family: cat, sans-serif !important;
 }
 
 canvas {
@@ -64,7 +87,7 @@ canvas {
 main.container {
     width: 75%;
     height: 100vh;
-    padding-bottom: 10rem;
+    padding-bottom: 5rem;
 }
 
 .gameText{
