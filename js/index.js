@@ -191,8 +191,10 @@ function keyFunctions() {
     setGameStatus(4);
 
     //Gives the checkKey() function the key that the user pressed.
-
-    checkKey(event.key);
+    console.log(event.key);
+    if(isNaN(parseInt(event.key)) === true) {
+        checkKey(event.key);
+    }
 }
 
 
@@ -240,6 +242,7 @@ function genWordDiv() {
 //Check what key the user pressed, and do stuff accordingly.
 
 function checkKey(key) {
+    console.log(key);
 
     //Check the array of letters in the word to see if the key the user pressed is in there.
 
